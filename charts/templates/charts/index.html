@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Charts</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+  <h1>Demo chart</h1>
+  <div id="medals-chart"></div>
+  <code>{{ medal_chart_url }}</code>
+
+  <script type="module">
+    const {MedalsChart} = await import("{{ medal_chart_url }}");
+    const target = document.querySelector("#medals-chart");
+    target.append(await MedalsChart());
+  </script>
+</body>
+
+</html>
