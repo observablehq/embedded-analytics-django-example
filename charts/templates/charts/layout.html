@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Chart Demo{% endblock %}</title>
+
+  <link rel="stylesheet" href="{% static "charts/style.css" %}">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Overview</a></li>
+            <li><a href="/afr">Africa</a></li>
+            <li><a href="/ame">Americas</a></li>
+            <li><a href="/asi">Asia</a></li>
+            <li><a href="/eur">Europe</a></li>
+            <li><a href="/oce">Oceania</a></li>
+        </ul>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+
+</html>
