@@ -34,7 +34,7 @@ def sign_embedded_chart_url(url):
     exp = nbf + (SIGNATURE_VALIDITY_MIN * 60)
 
     payload_data = {
-        'sub': 'mythmon',
+        'sub': 'anonymous-user',
         'urn:observablehq:path': parsed_url.path,
         'nbf': int(nbf),
         'exp': int(exp),
