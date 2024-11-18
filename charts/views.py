@@ -5,8 +5,10 @@ import jwt
 from django.shortcuts import render
 from django.conf import settings
 
+project_base_url = "https://observablehq.observablehq.cloud/olympian-embeds"
+
 def index(request):
-    signed_url = sign_embedded_chart_url("https://observablehq.observablehq.cloud/olympian-embeds/medals-chart.js")
+    signed_url = sign_embedded_chart_url(f"{project_base_url}/medals-chart.js")
     context = {
         'medal_chart_url': signed_url,
     }
@@ -14,7 +16,7 @@ def index(request):
 
 def continent(name, code):
     def fn(request):
-        signed_url = sign_embedded_chart_url(f"https://observablehq.observablehq.cloud/olympian-embeds/continent/{code}/chart.js")
+        signed_url = sign_embedded_chart_url(f"{project_base_url}/continent/{code}/chart.js")
         context = {
             'medal_chart_url': signed_url,
             'continent_name': name,
